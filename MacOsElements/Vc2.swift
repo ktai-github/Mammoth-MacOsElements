@@ -59,5 +59,6 @@ class Vc2: NSViewController {
     vSliderValue.stringValue = "Vertical slider at: " +  String(format: "%.1f", myVerticalSlider.floatValue)
   }
   
+//  myImageView.image = NSImage(named: NSImage.Name(rawValue: "Mammoth-Interactive-Logo-and-Text-768x432"))
   
 }

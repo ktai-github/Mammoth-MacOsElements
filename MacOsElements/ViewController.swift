@@ -24,6 +24,8 @@ class ViewController: NSViewController {
   
   @IBOutlet weak var verticalSliderLabel: NSTextField!
   
+  @IBOutlet weak var myImageView: NSImageView!
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -44,6 +46,8 @@ class ViewController: NSViewController {
     horizontalSlider.floatValue = 1.0
     
     verticalSliderLabel.stringValue = "Vertical Slider value is: " + String(format: "%.1f", verticalSlider.floatValue)
+    
+    myImageView.image = NSImage(named: NSImage.Name(rawValue: "Mammoth-Interactive-Logo-and-Text-768x432"))
     
     // Do any additional setup after loading the view.
   }
