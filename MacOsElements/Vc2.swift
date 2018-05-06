@@ -19,6 +19,17 @@ class Vc2: NSViewController {
   
   @IBOutlet weak var vSliderValue: NSTextField!
   
+  
+  @IBOutlet weak var textFieldBillAmount: NSTextField!
+  
+  @IBOutlet weak var sliderTipPercentage: NSSlider!
+  
+  @IBOutlet weak var labelTipPercentage: NSTextField!
+  
+  @IBOutlet weak var labelTipAmount: NSTextField!
+  
+  @IBOutlet weak var labelTotalAmount: NSTextField!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
       myMenu.removeAllItems()
@@ -31,7 +42,13 @@ class Vc2: NSViewController {
       
       vSliderValue.stringValue = "Vertical slider at: " +  String(format: "%.1f", myVerticalSlider.floatValue)
         // Do view setup here.
-
+      
+      textFieldBillAmount.alignment = .right
+      textFieldBillAmount.stringValue = "0.00"
+      labelTipAmount.alignment = .right
+      labelTipAmount.stringValue = "0.00"
+      labelTotalAmount.alignment = .right
+      labelTotalAmount.stringValue = "0.00"
     }
   @IBAction func actionButtonClicked(_ sender: NSButton) {
 //    myTextField.isHidden = false
@@ -59,6 +76,47 @@ class Vc2: NSViewController {
     vSliderValue.stringValue = "Vertical slider at: " +  String(format: "%.1f", myVerticalSlider.floatValue)
   }
   
-//  myImageView.image = NSImage(named: NSImage.Name(rawValue: "Mammoth-Interactive-Logo-and-Text-768x432"))
+
+//  NSString *stringBillAmount = [self.billAmountTextField text];
+//  float floatBillAmount = [stringBillAmount floatValue];
+//
+//  NSString *stringTipPercentage = [self.tipPercentageTextField text];
+//  float floatTipPercentage = [stringTipPercentage floatValue];
+//
+//  floatTipAmount = floatBillAmount * floatTipPercentage / 100;
+//
+//  NSString *stringTipAmount = [NSString stringWithFormat:@"%.2f", floatTipAmount];
+//  //  NSLog(@"%@", stringTipAmount);
+//  self.tipAmountLabel.text = stringTipAmount;
+
+  @IBAction func calculateButtonClicked(_ sender: NSButton) {
+    let floatBillAmount = textFieldBillAmount.floatValue
+    let intTipPercentage = sliderTipPercentage.intValue
+    
+    let floatTipAmount = floatBillAmount *  Float(intTipPercentage) / 100
+    print(floatTipAmount)
+    
+    let numberTipAmount = floatTipAmount as NSNumber
+    
+    let formatter = NumberFormatter()
+    formatter.locale = NSLocale.current
+    formatter.numberStyle = .currency
+    
+    labelTipAmount.stringValue = formatter.string(from: numberTipAmount)!
+    
+    let floatTotalAmount = (floatTipAmount + floatBillAmount ) as NSNumber
+    print(floatTotalAmount)
+    
+    labelTotalAmount.stringValue = formatter.string(from: floatTotalAmount)!
+  }
+  
+  @IBAction func tipPercentageSliderChanged(_ sender: NSSlider) {
+    labelTipPercentage.stringValue = String(sliderTipPercentage.intValue) + "%"
+    print(sliderTipPercentage.intValue)
+  }
+  
   
 }
+
+
+
