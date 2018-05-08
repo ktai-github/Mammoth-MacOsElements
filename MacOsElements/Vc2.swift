@@ -44,11 +44,11 @@ class Vc2: NSViewController {
         // Do view setup here.
       
       textFieldBillAmount.alignment = .right
-      textFieldBillAmount.stringValue = "0.00"
+      textFieldBillAmount.floatValue = 0.00
       labelTipAmount.alignment = .right
-      labelTipAmount.stringValue = "0.00"
+      labelTipAmount.floatValue = 0.00
       labelTotalAmount.alignment = .right
-      labelTotalAmount.stringValue = "0.00"
+      labelTotalAmount.floatValue = 0.00
     }
   @IBAction func actionButtonClicked(_ sender: NSButton) {
 //    myTextField.isHidden = false
@@ -90,22 +90,18 @@ class Vc2: NSViewController {
 //  self.tipAmountLabel.text = stringTipAmount;
 
   @IBAction func calculateButtonClicked(_ sender: NSButton) {
-    let floatBillAmount = textFieldBillAmount.floatValue
+    let floatBillAmount = textFieldBillAmount.floatValue  // need error handling
     let intTipPercentage = sliderTipPercentage.intValue
-    
-    let floatTipAmount = floatBillAmount *  Float(intTipPercentage) / 100
-    print(floatTipAmount)
-    
-    let numberTipAmount = floatTipAmount as NSNumber
+    let floatTipAmount = floatBillAmount * Float(intTipPercentage) / 100
+    let numberTipAmount = floatTipAmount as NSNumber  // to be formatted in currency
     
     let formatter = NumberFormatter()
-    formatter.locale = NSLocale.current
-    formatter.numberStyle = .currency
+    formatter.locale = NSLocale.current  // current user’s chosen system locale
+    formatter.numberStyle = NumberFormatter.Style.currency
     
     labelTipAmount.stringValue = formatter.string(from: numberTipAmount)!
     
-    let floatTotalAmount = (floatTipAmount + floatBillAmount ) as NSNumber
-    print(floatTotalAmount)
+    let floatTotalAmount = (floatTipAmount + floatBillAmount ) as NSNumber  // to be formatted in currency
     
     labelTotalAmount.stringValue = formatter.string(from: floatTotalAmount)!
   }

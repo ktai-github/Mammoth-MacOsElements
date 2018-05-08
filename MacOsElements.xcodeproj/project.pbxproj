@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0F040820A0FF7E00E5AA49 /* TipVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F040720A0FF7E00E5AA49 /* TipVc.swift */; };
+		2C0F040A20A100B400E5AA49 /* TaxVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F040920A100B400E5AA49 /* TaxVc.swift */; };
 		2C8327DA2097A0AF00E5E3A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8327D92097A0AF00E5E3A9 /* AppDelegate.swift */; };
 		2C8327DC2097A0AF00E5E3A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8327DB2097A0AF00E5E3A9 /* ViewController.swift */; };
 		2C8327DE2097A0B100E5E3A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C8327DD2097A0B100E5E3A9 /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C0F040720A0FF7E00E5AA49 /* TipVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipVc.swift; sourceTree = "<group>"; };
+		2C0F040920A100B400E5AA49 /* TaxVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxVc.swift; sourceTree = "<group>"; };
 		2C8327D62097A0AF00E5E3A9 /* MacOsElements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacOsElements.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C8327D92097A0AF00E5E3A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C8327DB2097A0AF00E5E3A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 				2C8327F92097B7DD00E5E3A9 /* Vc2.swift */,
 				2C8327DD2097A0B100E5E3A9 /* Assets.xcassets */,
 				2C8327DF2097A0B100E5E3A9 /* Main.storyboard */,
+				2C0F040720A0FF7E00E5AA49 /* TipVc.swift */,
+				2C0F040920A100B400E5AA49 /* TaxVc.swift */,
 				2C8327E22097A0B100E5E3A9 /* Info.plist */,
 				2C8327E32097A0B100E5E3A9 /* MacOsElements.entitlements */,
 			);
@@ -198,7 +204,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0F040820A0FF7E00E5AA49 /* TipVc.swift in Sources */,
 				2C8327DC2097A0AF00E5E3A9 /* ViewController.swift in Sources */,
+				2C0F040A20A100B400E5AA49 /* TaxVc.swift in Sources */,
 				2C8327DA2097A0AF00E5E3A9 /* AppDelegate.swift in Sources */,
 				2C8327FA2097B7DD00E5E3A9 /* Vc2.swift in Sources */,
 			);
