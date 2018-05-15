@@ -35,7 +35,8 @@ class TipVc: NSViewController {
       
     }
   
-  override func viewDidAppear() {
+  //changed from viewDidAppear to viewWillAppear
+  override func viewWillAppear() {
     
     labelSubTotalAmount.stringValue = formatter.string(from: subTotalAmount)!
     labelTotalAfterTaxAmount.stringValue = formatter.string(from: totalAfterTax)!
@@ -47,8 +48,7 @@ class TipVc: NSViewController {
     let floatTipAmount = subTotalAmount.floatValue * Float(intTipPercentage) / 100
     let numberTipAmount = floatTipAmount as NSNumber  // to be formatted in currency
     
-    let formatter = NumberFormatter()
-    formatter.numberStyle = NumberFormatter.Style.currency
+    
     
     labelTipAmount.stringValue = formatter.string(from: numberTipAmount)!
     

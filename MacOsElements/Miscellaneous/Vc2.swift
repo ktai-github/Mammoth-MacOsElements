@@ -19,7 +19,6 @@ class Vc2: NSViewController {
   
   @IBOutlet weak var vSliderValue: NSTextField!
   
-  
   @IBOutlet weak var textFieldBillAmount: NSTextField!
   
   @IBOutlet weak var sliderTipPercentage: NSSlider!
@@ -30,8 +29,45 @@ class Vc2: NSViewController {
   
   @IBOutlet weak var labelTotalAmount: NSTextField!
   
-    override func viewDidLoad() {
+  override func viewWillAppear() {
+    print("viewWillAppear executed")
+  }
+  
+  override func viewDidAppear() {
+    print("viewDidAppear executed")
+
+  }
+  
+  override func viewWillDisappear() {
+    print("viewWillDisappear executed")
+
+  }
+  
+  override func viewDidDisappear() {
+    print("viewDidDisappear executed")
+
+  }
+  
+//  override func updateViewConstraints() {
+//    print("updateViewConstraints executed")
+//
+//  }
+  
+  override func viewWillLayout() {
+    print("viewWillLayout executed")
+
+  }
+  
+  override func viewDidLayout() {
+    print("viewDidLayout executed")
+
+  }
+
+  override func viewDidLoad() {
         super.viewDidLoad()
+      
+      print("videwDidLoad executed")
+      
       myMenu.removeAllItems()
       myMenu.addItems(withTitles: ["macOS", "iOS", "tvOS", "watchOS"])
       myHorizontalSlider.allowsTickMarkValuesOnly = true
@@ -49,7 +85,8 @@ class Vc2: NSViewController {
       labelTipAmount.floatValue = 0.00
       labelTotalAmount.alignment = .right
       labelTotalAmount.floatValue = 0.00
-    }
+    
+  }
   @IBAction func actionButtonClicked(_ sender: NSButton) {
 //    myTextField.isHidden = false
 //    myTextField.isEnabled = true

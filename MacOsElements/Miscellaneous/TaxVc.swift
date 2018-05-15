@@ -29,6 +29,9 @@ class TaxVc: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
       
+      // added one time currency format set up 
+      formatter.numberStyle = NumberFormatter.Style.currency
+
       textFieldSubTotalAmount.alignment = .right
       textFieldSubTotalAmount.floatValue = 0.00
       labelTaxAmount.alignment = .right
@@ -44,11 +47,12 @@ class TaxVc: NSViewController {
     
     let floatSubTotalAmount = textFieldSubTotalAmount.floatValue // need error handling
     
+    //this line not needed if float value is specified instead of int
     let intTaxPercentage = sliderTaxPercentage.intValue
+    
     let floatTaxAmount = floatSubTotalAmount * Float(intTaxPercentage) / 100
     let numberTaxAmount = floatTaxAmount as NSNumber  // to be formatted in currency
 
-    formatter.numberStyle = NumberFormatter.Style.currency
 
     labelTaxAmount.stringValue = formatter.string(from: numberTaxAmount)!
 
