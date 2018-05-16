@@ -33,6 +33,23 @@ class TipVc: NSViewController {
       labelTotalAmount.alignment = .right
       labelTotalAmount.floatValue = 0.00
       
+      
+      
+      let stackView = UIStackView()
+      stackView.axis = .Horizontal
+      stackView.distribution = .FillEqually
+      stackView.alignment = .Fill
+      stackView.spacing = 5
+      stackView.translatesAutoresizingMaskIntoConstraints = false
+      view.addSubview(stackView)
+      
+//      let stackView = UIStackView(arrangedSubviews: buttonArray)
+//      stackView.axis = .Horizontal
+//      stackView.distribution = .FillEqually
+//      stackView.alignment = .Fill
+//      stackView.spacing = 5
+//      stackView.translatesAutoresizingMaskIntoConstraints = false
+//      view.addSubview(stackView)
     }
   
   //changed from viewDidAppear to viewWillAppear
